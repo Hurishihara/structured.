@@ -1,0 +1,10 @@
+# Node.js Dependencies
+node_modules/
+
+# General OS Files
+.DS_Store
+Thumbs.db
+
+# Build Outputs
+dist/
+build/
