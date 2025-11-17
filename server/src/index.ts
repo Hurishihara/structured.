@@ -3,23 +3,18 @@ import cors from 'cors'
 import { RPCHandler } from '@orpc/server/node';
 import { onError, onSuccess, ORPCError } from '@orpc/server';
 import { router } from './application/routers/main.route';
+import { context } from './infrastructure/utils/context';
+import { CORSPlugin } from '@orpc/server/plugins';
 
 const app = express()
 
 app.use(cors())
 
 const handler = new RPCHandler(router, {
+    plugins: [
+        new CORSPlugin()
+    ],
     interceptors: [
-        onError((error ) => {
-            if (error instanceof ORPCError) {
-                throw new ORPCError('BAD_REQUEST', {
-                    message: 'Authentication failed',
-                    defined: error.defined
-                })
-            }
-            console.error('Not RPC Error:', error);
-            return;
-        }),
         onSuccess((result) => {
             console.log('RPC Success:', result.response.body);
         })
@@ -29,7 +24,9 @@ const handler = new RPCHandler(router, {
 app.use('/rpc', async (req, res, next) => {
     const { matched } = await handler.handle(req, res, {
         prefix: '/rpc',
-        context: {}
+        context: {
+            useCases: context.useCases,
+        }
     })
     if (matched) {
         return;
