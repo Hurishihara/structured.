@@ -1,4 +1,4 @@
-import { implement, ORPCError, } from '@orpc/server';
+import { implement, ORPCError } from '@orpc/server';
 import { contract } from '../../infrastructure/api/main.contract.ts';
 import { Context } from '../../infrastructure/utils/context.ts';
 
