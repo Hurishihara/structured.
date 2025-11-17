@@ -1,13 +1,33 @@
-import { implement, ORPCError } from '@orpc/server';
-import { contract } from '../../infrastructure/api/main.contract';
+import { implement, ORPCError, } from '@orpc/server';
+import { contract } from '../../infrastructure/api/main.contract.ts';
+import { Context } from '../../infrastructure/utils/context.ts';
 
-const os = implement(contract);
+const os = implement(contract).$context<Context>()
 
 export const login = os.auth.login
-    .handler(({ input }) => {
-        console.log('Login attempt for user:', input.username);
-        if (input.username === 'admin' && input.password === 'password') {
-            return { message: 'fake-jwt-token' };
+    .handler(async ({ input, context }) => {
+        try {
+            const result = await context.useCases.auth.loginUseCase.execute(input.username, input.password);
+            return {
+                message: result
+            }
         }
-        throw new ORPCError('Invalid username or password');
+        catch (err: unknown) {
+            if (err instanceof ORPCError) {
+                throw err;
+            }
+        }
+    })
+
+export const register = os.auth.register
+    .handler(async ({ input, context }) => {
+        try {
+            const result = await context.useCases.auth.registerUseCase.execute(input.username, input.password);
+            return {
+                message: result
+            }
+        }
+        catch (err: unknown) {
+            throw err;
+        }
     })

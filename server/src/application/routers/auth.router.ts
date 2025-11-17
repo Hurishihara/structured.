@@ -1,9 +1,6 @@
-import { implement } from '@orpc/server';
-import { contract } from '../../infrastructure/api/main.contract';
-import { login } from '../procedures/auth.procedure';
-
-const os = implement(contract);
+import { login, register } from '../procedures/auth.procedure.ts';
 
 export const authRouter = {
-    login: login
+    login: login,
+    register: register
 }

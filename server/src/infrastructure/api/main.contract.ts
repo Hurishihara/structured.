@@ -1,7 +1,8 @@
-import { loginUserContract } from './contracts/auth.contract';
+import { loginUserContract, registerUserContract } from './contracts/auth.contract.ts';
 
 export const contract = {
     auth: {
-        login: loginUserContract
+        login: loginUserContract,
+        register: registerUserContract
     }
 }
