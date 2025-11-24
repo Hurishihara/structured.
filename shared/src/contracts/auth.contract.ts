@@ -1,6 +1,6 @@
 import { oc } from '@orpc/contract';
 import z from 'zod';
-import { AuthSchema } from '../schemas/auth.schema.ts';
+import { AuthSchema } from '../schemas/auth.schema.js';
 
 export const loginUserContract = oc
     .route({

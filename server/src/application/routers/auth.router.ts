@@ -1,4 +1,4 @@
-import { login, register } from '../procedures/auth.procedure.ts';
+import { login, register } from '../procedures/auth.procedure.js';
 
 export const authRouter = {
     login: login,

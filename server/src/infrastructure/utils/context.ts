@@ -1,7 +1,7 @@
-import ConcreteAuthService from '../../application/services/auth.service.ts'
-import ConcreteLoginUseCase, { LoginUseCase } from '../../application/use-cases/login.usecase.ts'
-import ConcreteRegisterUseCase, { RegisterUseCase } from '../../application/use-cases/register.usecase.ts'
-import userRepository from '../repositories/user.repository.ts'
+import ConcreteAuthService from '../../application/services/auth.service.js'
+import ConcreteLoginUseCase, { LoginUseCase } from '../../application/use-cases/login.usecase.js'
+import ConcreteRegisterUseCase, { RegisterUseCase } from '../../application/use-cases/register.usecase.js'
+import userRepository from '../repositories/user.repository.js'
 
 export interface Context {
     useCases: {

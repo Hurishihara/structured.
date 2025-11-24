@@ -1,5 +1,5 @@
 import { ORPCError } from '@orpc/contract';
-import { UserRepository } from '../../infrastructure/repositories/user.repository.ts';
+import { UserRepository } from '../../infrastructure/repositories/user.repository.js';
 
 export interface LoginUseCase {
     execute(username: string, password: string): Promise<string>;

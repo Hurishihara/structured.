@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors'
 import { RPCHandler } from '@orpc/server/node';
-import { onError, onSuccess, ORPCError } from '@orpc/server';
-import { router } from './application/routers/main.route.ts';
-import { context } from './infrastructure/utils/context.ts';
+import { onSuccess, } from '@orpc/server';
+import { router } from './application/routers/main.route.js';
+import { context } from './infrastructure/utils/context.js';
 import { CORSPlugin } from '@orpc/server/plugins';
 
 const app = express()

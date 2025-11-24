@@ -1,4 +1,4 @@
-import { UserRepository } from '../../infrastructure/repositories/user.repository.ts';
+import { UserRepository } from '../../infrastructure/repositories/user.repository.js';
 
 export interface AuthService {
     isUsernameTaken(username: string): Promise<boolean>;

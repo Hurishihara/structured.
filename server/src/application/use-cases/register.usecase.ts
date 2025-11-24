@@ -1,5 +1,5 @@
-import { UserRepository } from '../../infrastructure/repositories/user.repository.ts';
-import { AuthService } from '../services/auth.service.ts';
+import { UserRepository } from '../../infrastructure/repositories/user.repository.js';
+import { AuthService } from '../services/auth.service.js';
 
 export interface RegisterUseCase {
     execute(username: string, password: string): Promise<string>;
