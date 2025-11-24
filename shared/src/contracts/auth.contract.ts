@@ -1,10 +1,6 @@
 import { oc } from '@orpc/contract';
 import z from 'zod';
-
-export const AuthSchema = z.object({
-    username: z.string().min(3).max(30),
-    password: z.string().min(6)
-})
+import { AuthSchema } from '../schemas/auth.schema.ts';
 
 export const loginUserContract = oc
     .route({

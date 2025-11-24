@@ -1,5 +1,5 @@
 import type { InferContractRouterInputs, InferContractRouterOutputs } from '@orpc/contract';
-import { contract } from '../api/main.contract.ts';
+import { contract } from '../api/contract.ts';
 
 export type Inputs = InferContractRouterInputs<typeof contract>;
 export type Outputs = InferContractRouterOutputs<typeof contract>;

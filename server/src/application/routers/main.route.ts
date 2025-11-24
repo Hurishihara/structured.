@@ -1,5 +1,5 @@
 import { implement } from '@orpc/server';
-import { contract } from '../../infrastructure/api/main.contract.ts';
+import { contract } from '../../infrastructure/api/contract.ts';
 import { authRouter } from './auth.router.ts';
 
 const os = implement(contract);

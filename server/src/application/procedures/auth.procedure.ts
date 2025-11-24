@@ -1,5 +1,5 @@
 import { implement, ORPCError } from '@orpc/server';
-import { contract } from '../../infrastructure/api/main.contract.ts';
+import { contract } from '../../infrastructure/api/contract.ts';
 import { Context } from '../../infrastructure/utils/context.ts';
 
 const os = implement(contract).$context<Context>()

@@ -1,4 +1,4 @@
-import { loginUserContract, registerUserContract } from './contracts/auth.contract.ts';
+import { loginUserContract, registerUserContract } from '@shared/contracts/auth.contract.ts'
 
 export const contract = {
     auth: {

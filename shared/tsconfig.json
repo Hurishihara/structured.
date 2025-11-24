@@ -7,15 +7,12 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "types": ["node", "jest"],
+    "types": ["node"],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "isolatedModules": true,
-    "paths": {
-      "@shared/*": ["../shared/src/*"]
-    }
+    "isolatedModules": true
   },
   "include": [
     "src/**/*"

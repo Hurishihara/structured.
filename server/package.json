@@ -16,7 +16,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@orpc/contract": "^1.11.2",
     "@orpc/server": "^1.11.2",
     "@types/express": "^5.0.5",
     "@types/jest": "^30.0.0",
